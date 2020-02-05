@@ -70073,6 +70073,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruby
       objectReference: {fileID: 0}
+    - target: {fileID: 1929689797275394422, guid: 766f414a6bdb04af5a02559fa5d621ce,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8804258732772387325, guid: 436af527144df4d96aba20d08a78f0ff,
+        type: 3}
     - target: {fileID: 1929689797275394423, guid: 766f414a6bdb04af5a02559fa5d621ce,
         type: 3}
       propertyPath: m_Sprite

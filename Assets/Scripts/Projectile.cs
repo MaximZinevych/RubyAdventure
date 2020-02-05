@@ -13,7 +13,11 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        
+        //TODO: add some distance between cog and Ruby
+        if(transform.position.magnitude > 1000.0f)
+    {
+        Destroy(gameObject);
+    }
     }
 
     public void Launch(Vector2 direction, float force)
@@ -23,7 +27,13 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Projectile Collision with " + other.gameObject);
+        EnemyController enemy = other.collider.GetComponent<EnemyController>();
+
+        if (enemy != null)
+        {
+            enemy.Fix();
+        }
+
         Destroy(gameObject);
     }
 }
