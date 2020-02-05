@@ -13,16 +13,23 @@ public class EnemyController : MonoBehaviour
     int direction = 1;
 
     Animator animator;
+
+    bool broken;
     
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+        broken = true;
     }
 
     void Update()
     {
+
+        if(!broken)
+            return;
+
         timer -= Time.deltaTime;
 
         if (timer < 0)
@@ -58,5 +65,11 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(-1);
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rigidbody2D.simulated = false;
     }
 }
