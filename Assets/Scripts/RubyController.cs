@@ -5,7 +5,6 @@ using UnityEngine;
 public class RubyController : MonoBehaviour
 {
     public int maxHealth = 10;
-    public float movementSpeed = 5;
     public float speed = 5f;
 
     public int health { get { return currentHealth; }}
@@ -64,6 +63,7 @@ public class RubyController : MonoBehaviour
             {
                 Launch();
             }
+            
     }
 
     public void ChangeHealth(int amount)
@@ -80,10 +80,6 @@ public class RubyController : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
-    }
-
-    public void ChangeMovementSpeed(float amount){
-        movementSpeed += amount;
     }
 
     void Launch()
